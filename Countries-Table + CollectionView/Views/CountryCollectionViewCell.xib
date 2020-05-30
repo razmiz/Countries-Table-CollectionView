@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="countryCollectionViewCell" reuseIdentifier="CountryCollectionViewCell" id="gTV-IL-0wX" customClass="CountryCollectionViewCell" customModule="Country_Chooser" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="534" height="497"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="534" height="497"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cfV-1Y-3Ln" customClass="CustomImageView" customModule="Country_Chooser" customModuleProvider="target">
+                        <rect key="frame" x="16" y="233.5" width="80" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="v4X-rb-TD5"/>
+                            <constraint firstAttribute="width" constant="80" id="xjR-SG-Rdb"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Icb-LR-brs">
+                        <rect key="frame" x="112" y="248.5" width="300" height="0.0"/>
+                        <constraints>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="haa-6E-Sj2"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                        <color key="textColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="KvK-Qr-Wzm">
+                        <rect key="frame" x="197" y="203.5" width="140" height="100"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="140" id="Cni-4N-qdk"/>
+                            <constraint firstAttribute="height" constant="100" id="Veh-0e-BCY"/>
+                        </constraints>
+                        <color key="color" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </activityIndicatorView>
+                </subviews>
+            </view>
+            <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Icb-LR-brs" firstAttribute="leading" secondItem="cfV-1Y-3Ln" secondAttribute="trailing" constant="16" id="Hkj-ZG-9Md"/>
+                <constraint firstItem="KvK-Qr-Wzm" firstAttribute="centerX" secondItem="ZTg-uK-7eu" secondAttribute="centerX" id="WL1-F2-GcY"/>
+                <constraint firstItem="KvK-Qr-Wzm" firstAttribute="centerY" secondItem="ZTg-uK-7eu" secondAttribute="centerY" id="eRs-hW-MMt"/>
+                <constraint firstItem="Icb-LR-brs" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="lpN-S8-p3T"/>
+                <constraint firstItem="cfV-1Y-3Ln" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="r5j-Q2-ehr"/>
+                <constraint firstItem="cfV-1Y-3Ln" firstAttribute="centerY" secondItem="ZTg-uK-7eu" secondAttribute="centerY" id="yeF-28-lvK"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="534" height="497"/>
+            <connections>
+                <outlet property="activityIndicator" destination="KvK-Qr-Wzm" id="pOV-zm-glC"/>
+                <outlet property="countryNameLabel" destination="Icb-LR-brs" id="RzJ-Yv-xKw"/>
+                <outlet property="flagImage" destination="cfV-1Y-3Ln" id="GVN-Vj-9n1"/>
+            </connections>
+            <point key="canvasLocation" x="123.18840579710145" y="46.540178571428569"/>
+        </collectionViewCell>
+    </objects>
+</document>
