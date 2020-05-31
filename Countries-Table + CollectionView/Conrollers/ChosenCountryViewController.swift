@@ -24,6 +24,7 @@ class ChosenCountryViewController: UIViewController {
     
     
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -86,10 +87,14 @@ class ChosenCountryViewController: UIViewController {
             })
             regionalBlocLabel.text = "Regional Bloc: \(regionalBlocs.joined(separator: " ,"))"
             if regionalBlocs.joined(separator: " ,").trimmingCharacters(in: .whitespaces) == "" {
-                regionalBlocLabel.text = "n/a"
+                regionalBlocLabel.text = "Regional Bloc: n/a"
             }
             
         }
+    }
+    
+    @IBAction func dismissButtonTapped(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
     }
 }
 

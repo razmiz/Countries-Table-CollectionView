@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Country_Chooser" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="Country_Chooser" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -79,6 +79,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="611-f2-EWE"/>
                     <connections>
                         <outlet property="tableView" destination="mc6-hM-4pI" id="QVu-UZ-9MF"/>
                         <segue destination="SDZ-1L-6Ib" kind="show" identifier="countriesSegue" id="bqg-dS-JGe"/>
@@ -86,7 +87,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-307.24637681159425" y="71.651785714285708"/>
+            <point key="canvasLocation" x="602.89855072463774" y="71.651785714285708"/>
         </scene>
         <!--Countries View Controller-->
         <scene sceneID="TOq-2N-dmS">
@@ -97,22 +98,37 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chosen Region: ___" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nyV-Gl-OPY">
-                                <rect key="frame" x="16" y="16" width="382" height="0.0"/>
+                                <rect key="frame" x="16" y="16" width="382" height="34"/>
                                 <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="30"/>
                                 <color key="textColor" red="0.47684186699999997" green="0.50480759139999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7b9-pA-blv">
+                                <rect key="frame" x="16" y="16.5" width="30" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="4Rc-KH-Ad2"/>
+                                    <constraint firstAttribute="height" constant="30" id="NE2-ce-vjA"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="30" id="QNl-hu-EhO"/>
+                                    <constraint firstAttribute="width" constant="30" id="lo6-EH-DVA"/>
+                                </constraints>
+                                <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" backgroundImage="xmark.circle.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="dismissButtonTapped:" destination="SDZ-1L-6Ib" eventType="touchUpInside" id="YXD-Ya-RbE"/>
+                                    <action selector="dismissButtonTapped:" destination="QVz-JC-REY" eventType="touchUpInside" id="pKn-j6-562"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="choose a country:" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tqK-kJ-ycX">
-                                <rect key="frame" x="16" y="24" width="382" height="32.5"/>
+                                <rect key="frame" x="16" y="58" width="382" height="32.5"/>
                                 <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="25"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="zt9-17-CDK">
-                                <rect key="frame" x="8" y="80" width="398" height="616"/>
+                                <rect key="frame" x="8" y="114" width="398" height="582"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="khu-N4-y6C">
-                                        <rect key="frame" x="0.0" y="0.0" width="398" height="300"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="398" height="283"/>
                                         <color key="backgroundColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="WeW-Ed-c2A">
                                             <size key="itemSize" width="356" height="128"/>
@@ -127,7 +143,7 @@
                                         </connections>
                                     </collectionView>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="LmU-4G-aB5">
-                                        <rect key="frame" x="0.0" y="316" width="398" height="300"/>
+                                        <rect key="frame" x="0.0" y="299" width="398" height="283"/>
                                         <color key="backgroundColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="TEw-cf-Rya">
                                             <size key="itemSize" width="356" height="128"/>
@@ -146,11 +162,13 @@
                         </subviews>
                         <color key="backgroundColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="7b9-pA-blv" firstAttribute="leading" secondItem="2sI-9k-OgK" secondAttribute="leading" constant="16" id="7Lq-W7-7kC"/>
                             <constraint firstItem="nyV-Gl-OPY" firstAttribute="top" secondItem="2sI-9k-OgK" secondAttribute="top" constant="16" id="9rD-qF-Uc3"/>
                             <constraint firstItem="zt9-17-CDK" firstAttribute="leading" secondItem="2sI-9k-OgK" secondAttribute="leading" constant="8" id="Du1-7b-xMa"/>
                             <constraint firstItem="2sI-9k-OgK" firstAttribute="trailing" secondItem="nyV-Gl-OPY" secondAttribute="trailing" constant="16" id="Izh-Zr-MVM"/>
                             <constraint firstItem="tqK-kJ-ycX" firstAttribute="leading" secondItem="eN8-pF-Xh4" secondAttribute="leading" constant="16" id="LvI-dE-DQs"/>
                             <constraint firstItem="2sI-9k-OgK" firstAttribute="trailing" secondItem="zt9-17-CDK" secondAttribute="trailing" constant="8" id="NJy-EN-Xb8"/>
+                            <constraint firstItem="7b9-pA-blv" firstAttribute="top" secondItem="2sI-9k-OgK" secondAttribute="top" constant="16" id="WLL-Xb-Nuk"/>
                             <constraint firstAttribute="trailing" secondItem="tqK-kJ-ycX" secondAttribute="trailing" constant="16" id="b8R-BV-7oc"/>
                             <constraint firstItem="2sI-9k-OgK" firstAttribute="bottom" secondItem="zt9-17-CDK" secondAttribute="bottom" constant="112" id="rIN-lh-EBE"/>
                             <constraint firstItem="tqK-kJ-ycX" firstAttribute="top" secondItem="nyV-Gl-OPY" secondAttribute="bottom" constant="8" id="sF1-k8-wXf"/>
@@ -169,7 +187,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uR9-Wl-3Zc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="572" y="72"/>
+            <point key="canvasLocation" x="1481.1594202898552" y="71.651785714285708"/>
         </scene>
         <!--Chosen Country View Controller-->
         <scene sceneID="3AO-9w-Be0">
@@ -233,15 +251,29 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fLz-9K-GH0">
+                                <rect key="frame" x="16" y="16.5" width="30" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="9RN-YB-sWa"/>
+                                    <constraint firstAttribute="height" constant="30" id="nFp-b6-5kr"/>
+                                </constraints>
+                                <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" backgroundImage="xmark.circle.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="dismissButtonTapped:" destination="QVz-JC-REY" eventType="touchUpInside" id="th6-yi-h3s"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="fLz-9K-GH0" firstAttribute="top" secondItem="oES-bV-XVz" secondAttribute="top" constant="16" id="68v-1F-dzI"/>
                             <constraint firstItem="oES-bV-XVz" firstAttribute="trailing" secondItem="gMT-fe-LLk" secondAttribute="trailing" constant="16" id="6Lw-YX-kgb"/>
                             <constraint firstItem="Hnf-tD-NN0" firstAttribute="top" secondItem="oES-bV-XVz" secondAttribute="top" constant="16" id="7Mg-C8-rEX"/>
                             <constraint firstItem="uaB-Wd-Vaw" firstAttribute="top" secondItem="Hnf-tD-NN0" secondAttribute="bottom" constant="32" id="84v-Bh-RJY"/>
                             <constraint firstItem="oES-bV-XVz" firstAttribute="trailing" secondItem="Hnf-tD-NN0" secondAttribute="trailing" constant="26" id="IVr-aL-jlN"/>
                             <constraint firstItem="gMT-fe-LLk" firstAttribute="top" secondItem="uaB-Wd-Vaw" secondAttribute="bottom" constant="64" id="MAG-Xd-ohA"/>
                             <constraint firstItem="gMT-fe-LLk" firstAttribute="leading" secondItem="oES-bV-XVz" secondAttribute="leading" constant="16" id="T9T-a1-CUg"/>
+                            <constraint firstItem="fLz-9K-GH0" firstAttribute="leading" secondItem="oES-bV-XVz" secondAttribute="leading" constant="16" id="aDu-Ft-vXZ"/>
                             <constraint firstItem="Hnf-tD-NN0" firstAttribute="leading" secondItem="oES-bV-XVz" secondAttribute="leading" constant="16" id="svk-Pz-4NG"/>
                             <constraint firstItem="uaB-Wd-Vaw" firstAttribute="centerX" secondItem="oES-bV-XVz" secondAttribute="centerX" id="tty-uA-QeO"/>
                         </constraints>
@@ -261,10 +293,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gNv-a8-W4G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1444.9275362318842" y="72.991071428571431"/>
+            <point key="canvasLocation" x="2355.072463768116" y="72.991071428571431"/>
         </scene>
     </scenes>
     <resources>
         <image name="globus" width="385" height="384"/>
+        <image name="xmark.circle.fill" catalog="system" width="128" height="121"/>
     </resources>
 </document>

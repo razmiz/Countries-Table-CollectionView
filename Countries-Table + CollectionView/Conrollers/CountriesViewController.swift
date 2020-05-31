@@ -87,6 +87,11 @@ class CountriesViewController: UIViewController {
         }
     }
     
+    
+    @IBAction func dismissButtonTapped(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
 }
 
 // MARK: CollectionView Extension
